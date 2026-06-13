@@ -342,31 +342,42 @@ h3 { font-size: clamp(1.4rem, 2.4vw, 1.8rem); }
 .feature-list li:last-child { border-bottom: 0; }
 .section-dark .feature-list li { border-color: rgba(250, 247, 242, 0.14); }
 
-/* ---- Service-Karten ---- */
+/* ---- Service-Karten (Foto-Kacheln) ---- */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
 }
-@media (max-width: 1020px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .card-grid { grid-template-columns: 1fr; } }
+@media (max-width: 1080px) { .card-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 680px) { .card-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
 
 .service-card {
+  display: block;
   background: var(--white);
   border: 1px solid rgba(194, 160, 94, 0.3);
-  padding: 36px 28px;
   text-align: center;
+  overflow: hidden;
+  color: inherit;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .service-card:hover { transform: translateY(-4px); box-shadow: 0 22px 44px rgba(13, 59, 65, 0.12); }
+.service-card:hover img { transform: scale(1.05); }
+.service-card .card-photo { overflow: hidden; }
 .service-card img {
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
-  margin: 0 auto 20px;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
 }
-.service-card h3 { font-size: 1.35rem; margin-bottom: 10px; }
-.service-card p { font-size: 0.92rem; color: var(--muted); }
+.service-card .card-body { padding: 22px 18px 26px; }
+.service-card h3 { font-size: 1.22rem; margin-bottom: 8px; }
+.service-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+
+.section[id] { scroll-margin-top: 92px; }
+
+.note-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+@media (max-width: 760px) { .note-grid { grid-template-columns: 1fr; } }
 
 /* ---- Team ---- */
 .team-grid {
