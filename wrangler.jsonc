@@ -1,0 +1,28 @@
+{
+  "$schema": "https://unpkg.com/wrangler/config-schema.json",
+  "name": "aka-wester",
+  "compatibility_date": "2026-06-01",
+  // Persönliches Konto „Manuel@aka-wester.de's Account" — bewusst NICHT das
+  // SalonCare-Konto: Salon (Wester Styling UG) und SaaS sind getrennt.
+  "account_id": "20ec18be6eddafdb8861f3fb0abe7867",
+  // workers.dev-Preview aus: dieses (persönliche) Konto hat keine eigene
+  // workers.dev-Subdomain. Ausgeliefert wird über die eigene Domain (Routes
+  // unten), sobald die Zone aka-wester.de in diesem Konto aktiv ist.
+  "workers_dev": false,
+
+  // Statische Boutique-Website — keine Server-Logik, nur Assets.
+  // /services -> services.html übernimmt das Default-html_handling
+  // (auto-trailing-slash); 404.html greift bei unbekannten Pfaden.
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  },
+
+  // Zone aka-wester.de liegt im persönlichen Konto. Die Routes greifen, sobald
+  // die Zone aktiv ist (Nameserver bei Strato auf Cloudflare umgestellt).
+  // Apex + www haben proxied DNS-Records, daher fängt der Worker beide ab.
+  "routes": [
+    { "pattern": "aka-wester.de/*", "zone_name": "aka-wester.de" },
+    { "pattern": "www.aka-wester.de/*", "zone_name": "aka-wester.de" }
+  ]
+}
