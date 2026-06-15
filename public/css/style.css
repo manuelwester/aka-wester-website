@@ -546,6 +546,7 @@ h3 { font-size: clamp(1.4rem, 2.4vw, 1.8rem); }
   transition: opacity 0.25s ease, color 0.25s ease;
 }
 .partner-wordmark:hover { opacity: 1; color: var(--petrol); }
+.partner-row a { display: inline-flex; align-items: center; text-decoration: none; }
 
 /* ---- Kontakt ---- */
 .contact-grid {
