@@ -536,6 +536,16 @@ h3 { font-size: clamp(1.4rem, 2.4vw, 1.8rem); }
   transition: filter 0.25s ease;
 }
 .partner-row img:hover { filter: grayscale(0) opacity(1); }
+.partner-wordmark {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  opacity: 0.5;
+  transition: opacity 0.25s ease, color 0.25s ease;
+}
+.partner-wordmark:hover { opacity: 1; color: var(--petrol); }
 
 /* ---- Kontakt ---- */
 .contact-grid {
