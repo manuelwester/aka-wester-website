@@ -262,7 +262,7 @@ h3 { font-size: clamp(1.4rem, 2.4vw, 1.8rem); }
 .hero-logo { margin: 0 auto; line-height: 0; }
 .hero-logo img {
   display: block;
-  width: clamp(260px, 42vw, 420px);
+  width: clamp(190px, 30vw, 300px);
   height: auto;
   margin: 0 auto;
   filter: drop-shadow(0 8px 28px rgba(0, 0, 0, 0.35));
