@@ -257,8 +257,16 @@ h3 { font-size: clamp(1.4rem, 2.4vw, 1.8rem); }
   background: linear-gradient(180deg, rgba(13, 59, 65, 0.55) 0%, rgba(13, 59, 65, 0.72) 70%, rgba(13, 59, 65, 0.88) 100%);
 }
 .hero-content { position: relative; z-index: 1; padding: 120px 24px; max-width: 880px; }
-.hero-content .kicker { color: var(--gold-soft); }
+.hero-content .kicker { color: var(--gold-soft); margin-top: 14px; }
 .hero-content h1 { color: var(--ivory); }
+.hero-logo { margin: 0 auto; line-height: 0; }
+.hero-logo img {
+  display: block;
+  width: clamp(260px, 42vw, 420px);
+  height: auto;
+  margin: 0 auto;
+  filter: drop-shadow(0 8px 28px rgba(0, 0, 0, 0.35));
+}
 .hero-sub {
   font-family: var(--font-display);
   font-style: italic;
